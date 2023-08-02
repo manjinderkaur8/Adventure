@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!--responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--css-->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!--boostrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <!--fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!--icons-->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!--jquery cdn-->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+  <!--swipper css-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+  <!--title-->
+  <title>Adventure Allies </title>
+
+</head>
+
+<body class="body">
+
+  <!--header1 -->
+  <div class="header1">
+    <div class="container">
+      <div class="row d-flex align-items-center  py-3">
+        <div class="col-2 logo text-start">
+          <img src="./images/logo.png">
+        </div>
+
+        <div class="col-8 menu-items text-center">
+          <a href="#!" class="active"> FLIGHTS</a>
+
+          <a href="#!"> HOTELS</a>
+
+          <a href="#!"> CARS</a>
+
+          <a href="#!"> PACKAGE TOUR</a>
+
+          <a href="#!"> ABOUT</a>
+
+          <a href="#!"> CONTACT</a>
+        </div>
+
+        <div class="col-2 contact-no text-end">
+          <a href="#!"> ENQURE</Em></a>
+        </div>
+      </div>
+    </div> <!--header closed -->
+  </div>
+
+  <!--section 1 -->
+
+  <!--swipper1 -->
+  <div class="section1 ">
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item  slide1 active">
+          <div class="layer d-flex justify-content-center align-items-center w-100 h-100">
+            <h2> NEW YORK</h2>
+          </div>
+
+        </div>
+        <div class="carousel-item slide2 ">
+
+          <div class="layer d-flex justify-content-center align-items-center w-100 h-100">
+            <h2> SAN FRANSISCO</h2>
+          </div>
+
+        </div>
+        <div class="carousel-item slide3 ">
+          <div class="layer d-flex justify-content-center align-items-center w-100 h-100">
+            <h2> CHICAGO </h2>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!--form--->
+
+    <form class="container py-5 px-5 form" onsubmit="getFlights(event)">
+      <div class="row mb-5">
+        <div class="col-2 d-flex ">
+          <label class="px-4">
+            <input type="radio" name="flightOption" value="oneWay" checked>
+            One-way
+          </label>
+        </div>
+        <div class="col-2">
+          <label class="px-4">
+            <input type="radio" name="flightOption" value="roundTrip">
+            Round-trip
+          </label>
+        </div>
+      </div>
+
+      <div class="row d-flex align-items-center justify-content-between position-relative">
+        <div class="col-2 form1 pe-1">
+          <span> From<span class="text-danger" style="background-color: transparent;">*</span> </span>
+          <input type="text" id="fromCity" name="fromCity" placeholder="Enter your city" class="w-100" required>
+        </div>
+        <div class="col-2 pe-1 form1">
+          <span> To<span class="text-danger" style="background-color: transparent;">*</span> </span>
+          <input type="text" id="toCity" name="toCity" placeholder="Enter your city" class="w-100" required>
+        </div>
+        <div class="col-2 pe-1 form1">
+          <span> From Date<span class="text-danger" style="background-color: transparent;">*</span> </span>
+          <input type="date" id="dateFrom" name="dateFrom" class="w-100" required>
+        </div>
+        <div class="col-2 pe-1 form1">
+          <span> To Date<span class="text-danger" style="background-color: transparent;">*</span> </span>
+          <input type="date" id="dateTo" name="dateTo" class="w-100" required>
+        </div>
+        <div class="col-2 form1">
+          <span> Travellers & Class </span>
+          <input type="text" id="travelClass" name="travelClass" placeholder="Choose Class" class="w-100">
+        </div>
+        <div class="button text-center mt-4">
+          <input type="submit" value="Search Flights" id="myForm">
+        </div>
+      </div>
+    </form>
+
+
+
+  </div> <!--section1 end-->
+
+
+  <!--section2-->
+
+  <div class="container section2">
+
+    <div class="row head2 mb-5  justify-content-center">
+      <div class="col-12 text-center mb-2">
+        <h2> WHY CHOOSE US </h2>
+      </div>
+
+      <div class="col-8 text-center">
+        <p> We are your doorway to a world of opportunities and priceless memories, more than just a travel website.
+          Choose us, and let's work together to design the trip of a lifetime. Choose Adventures Allies for your next
+          experience and embrace the journey and the magic.</p>
+      </div>
+    </div>
+
+
+
+    <div class="row features justify-content-between">
+
+      <div class="col-3 text-center f1 ">
+
+        <i class="ph-light ph-shield-check "></i>
+
+        <h3> Great Deals and Discounts</h3>
+
+        <P>Take advantage of our special deals and discounts to save on your travel expenses </P>
+      </div>
+
+      <div class="col-3 text-center f1 ">
+
+        <i class="ph-light ph-headphones"></i>
+
+        <h3> Flexible Booking Options</h3>
+
+        <P>The company promises the lowest price, ensuring customers won't find a better deal elsewhere. </P>
+      </div>
+
+
+      <div class="col-3 text-center f1 ">
+
+        <i class="ph-light ph-shield-check "></i>
+
+        <h3> Fast Easy & Secure</h3>
+
+        <P>The company promises the lowest price, ensuring customers won't find a better deal elsewhere. </P>
+      </div>
+
+
+    </div>
+
+  </div> <!--section2-->
+
+
+
+  <!--section3-->
+
+  <div class="container section3">
+
+    <div class="row head2 mb-5  justify-content-center">
+      <div class="col-12 text-center mb-2">
+        <h2> TOP DESTINATIONS </h2>
+      </div>
+
+      <div class="col-8 text-center">
+        <p> These popular destinations have a lot to explore</p>
+      </div>
+    </div>
+
+
+    <div class="row images justify-content-between">
+      <div class="col-4">
+        <div class="zoom-effect">
+          <img src="./images/img1.jpg" width="100%" height="250px">
+          <span> New York </span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="zoom-effect">
+          <img src="./images/img2.jpg" width="100%" height="250px">
+          <span> New York </span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="zoom-effect">
+          <img src="./images/img3.jpg" width="100%" height="250px">
+          <span> New York </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-8">
+        <div class="zoom-effect">
+          <img src="./images/new.jpg" width="100%" height="250px">
+          <span> New York </span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="zoom-effect">
+          <img src="./images/chicago.jpg" width="100%" height="250px">
+          <span> New York </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- section4 -->
+
+  <div class="section4">
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+
+      <div class="parallax-bg" style="
+                          background-image: url(./images/new.jpg);
+                          
+                        " data-swiper-parallax="-23%"></div>
+
+
+      <div class="swiper-wrapper">
+
+
+        <div class="swiper-slide">
+
+          <div class="row justify-content-center">
+
+
+            <div class="title mb-4 col-12 text-center" data-swiper-parallax="-300">Joseph</div>
+            <div class="  col-6 text-center" data-swiper-parallax="-100">
+              <p>
+                "Booking was a breeze with a user-friendly interface, helpful reviews, and quick customer support.
+                Thanks to them, our vacation was stress-free and memorable. Highly recommended for a seamless travel
+                experience!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="swiper-slide">
+          <div class="row justify-content-center">
+
+
+            <div class="title mb-4 col-12 text-center" data-swiper-parallax="-300">Robert</div>
+            <div class="  col-6 text-center" data-swiper-parallax="-100">
+              <p>
+                "This booking website stands out with tailored search options, spot-on recommendations, and smooth
+                booking. They even offered discounts! A fantastic trip planning platform—I'll use it for all my
+                travels!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="swiper-slide">
+          <div class="row justify-content-center">
+
+
+            <div class="title mb-4 col-12 text-center" data-swiper-parallax="-300">Amilie</div>
+            <div class="  col-6 text-center" data-swiper-parallax="-100">
+              <p>
+                "Impressive layout, unique accommodations, and accurate reviews set this booking website apart. Their
+                interactive map and hidden gems made my trips exciting and authentic. A must-visit for travel
+                enthusiasts!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+
+  </div>
+
+
+
+  <!--section5-->
+
+
+  <div class="container  p-5 section5 ">
+    <div class="row justify-content-center">
+      <div class="col-5  ">
+        <img src="./images/img3.jpg" class="img-fluid">
+      </div>
+
+
+
+      <div class="col-6">
+        <div class="row mb-5">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Name" aria-label="name">
+          </div>
+          <div class="col">
+            <input type="email" class="form-control" placeholder="Email" aria-label="email">
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col">
+            <input type="tel" class="form-control" placeholder="Contact.no" aria-label="contact.no">
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col">
+            <textarea class="form-control" name="story" rows="5" cols="40" aria-label="Your message">
+                                    </textarea>
+
+          </div>
+
+        </div>
+
+        <div class="row mb-3 ">
+          <div class="col button2 text-end">
+
+            <input type="submit" value="Send">
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white py-5" style="background-color:var(--color1)">
+
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Company name</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              <a href="#!" class="text-white">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              <a href="#!" class="text-white">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  </div>
+  <!-- End of .container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--java script-->
+  <script src="./java script/index.js"> </script>
+
+
+  <!--boostrap js-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
